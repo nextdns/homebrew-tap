@@ -2,16 +2,16 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.0.0"
+  version "1.0.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.0.0/nextdns_1.0.0_Darwin_x86_64.tar.gz"
-    sha256 "5c7d48a7ed5f2ecf914104dd46aea41a921e5b505792b72c4f7cd21e03be77dd"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.0.1/nextdns_1.0.1_darwin_amd64.tar.gz"
+    sha256 "381b2b433ea5309a62cd63545f788861eec4ac1ad8f432418a6ff0f3e1db7aa7"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.0.0/nextdns_1.0.0_Linux_x86_64.tar.gz"
-      sha256 "9430cf2e11ff91a38d0c26e9c27c09661ab48ce7155d70a34b25ff59aa0c9980"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.0.1/nextdns_1.0.1_linux_amd64.tar.gz"
+      sha256 "5cd8b73f7ebc69efe71521a9131fb36fc6a61c2d5afceebc15fdb2970b8a116e"
     end
   end
 
