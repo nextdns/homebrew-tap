@@ -7,11 +7,11 @@ class Nextdns < Formula
 
   if OS.mac?
     url "https://github.com/nextdns/nextdns/releases/download/v1.0.3/nextdns_1.0.3_darwin_amd64.tar.gz"
-    sha256 "080afa0a7689574fc7eb4fd510ce2624fe6d69737a09f1e10ffe1a406180b5fd"
+    sha256 "e6c18690edd21f94d7561016bfb586f640500888099a94ad6aff052be606f540"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/nextdns/nextdns/releases/download/v1.0.3/nextdns_1.0.3_linux_amd64.tar.gz"
-      sha256 "007991eed874a18f1a90e8cbebbe6e872daa5b62761e1ceb5d100d20a131ada0"
+      sha256 "6f775cfd0a02495d7a7e6b0e43a34be9293c5f29fb65d91abea45094ae02ed24"
     end
   end
 
