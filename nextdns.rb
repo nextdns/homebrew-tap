@@ -2,20 +2,37 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.0.7"
+  version "1.0.8"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.0.7/nextdns_1.0.7_darwin_amd64.tar.gz"
-    sha256 "543a4560f68b67e28cd8655c8b0b533b8ee935cdf3d23a8d28153269d2d693fa"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.0.8/nextdns_1.0.8_darwin_amd64.tar.gz"
+    sha256 "2bda069ddf8bedd60f4655dcb0d4c28c59ac40b44192c4e47881b9c3c5508887"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.0.7/nextdns_1.0.7_linux_amd64.tar.gz"
-      sha256 "9587b86e21a2e59fdaef49ea9d72a9836b00a78e561aa71fbc4261fac584c0df"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.0.8/nextdns_1.0.8_linux_amd64.tar.gz"
+      sha256 "5159eeb8e0e21e36af2c66edf5727f7ab2593234db7b2242e30da55f68378fb2"
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/nextdns/nextdns/releases/download/v1.0.8/nextdns_1.0.8_linux_arm64.tar.gz"
+        sha256 "c6e1ace0a11e8683c2bc6b619c387a94a42e3653a6311ac2de5a1763b3bab208"
+      else
+        url "https://github.com/nextdns/nextdns/releases/download/v1.0.8/nextdns_1.0.8_linux_armv6.tar.gz"
+        sha256 "cf1a9bc8f669f9ba0682e3756c3a1c2ce1eecd01a9f436f7b6851c4985cc4807"
+      end
     end
   end
 
   def install
     bin.install "nextdns"
+  end
+
+  def caveats; <<~EOS
+    To install NextDNS, run the following command:
+    sudo nextdns install --config <your_conf_id>
+    Then setup your DNS manually to 127.0.0.1 or by running:
+    nextdns activate
+  EOS
   end
 end
