@@ -2,24 +2,24 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.2.1"
+  version "1.2.2"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.2.1/nextdns_1.2.1_darwin_amd64.tar.gz"
-    sha256 "3d55df1a656700b51414aac4962853aa99dc9d0c92e1321b9afee3c3ab6f589e"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.2.2/nextdns_1.2.2_darwin_amd64.tar.gz"
+    sha256 "b8c5c53b0c42beab859f42d48fa0e5cb222787f6d4fb4f0f4a99759f8061f8e9"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.2.1/nextdns_1.2.1_linux_amd64.tar.gz"
-      sha256 "d8e5f443a4fbfad443169cc629bd91aa56311dbce80f98bf8972f9b6f89c25e4"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.2.2/nextdns_1.2.2_linux_amd64.tar.gz"
+      sha256 "377a5893150da1109f67cddf7145d2ca9240d324f9a03a633cdd9bc2582de6b4"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/nextdns/nextdns/releases/download/v1.2.1/nextdns_1.2.1_linux_arm64.tar.gz"
-        sha256 "f64ed9178950f9e7046c420e25088b28d79c7490cbff8257d365d8ae9c84c74c"
+        url "https://github.com/nextdns/nextdns/releases/download/v1.2.2/nextdns_1.2.2_linux_arm64.tar.gz"
+        sha256 "e70b2247cb84677f43b7893ebe17b667837199c5824bdb107c87e9c3f006f1a9"
       else
-        url "https://github.com/nextdns/nextdns/releases/download/v1.2.1/nextdns_1.2.1_linux_armv6.tar.gz"
-        sha256 "705ee449fe51132fa5c3a1f859d1d59309c9098ecf1fca02a11297de3af3d3d9"
+        url "https://github.com/nextdns/nextdns/releases/download/v1.2.2/nextdns_1.2.2_linux_armv6.tar.gz"
+        sha256 "7e28dea012e51671148e3c99e4e8d4c6c9258166fbb3f33d10b543165eeec567"
       end
     end
   end
