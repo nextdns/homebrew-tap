@@ -2,24 +2,24 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.2.9"
+  version "1.2.10"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.2.9/nextdns_1.2.9_darwin_amd64.tar.gz"
-    sha256 "3c5eb40db6349a10464373949db95e74b1d4107fff5ce1be439c5942a3b1b989"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.2.10/nextdns_1.2.10_darwin_amd64.tar.gz"
+    sha256 "19653e82d43d9a09a17259d76edc16f82e901cdd7e3cd10d538262cfc6789d9b"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.2.9/nextdns_1.2.9_linux_amd64.tar.gz"
-      sha256 "08e8f9816e4f764e12f5cb9b2d381148f7b8181284e1654195d50ef482cb3f4d"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.2.10/nextdns_1.2.10_linux_amd64.tar.gz"
+      sha256 "d33017578aea6752131e33d0c314bae896ab14b3108f23b6de3ca7b315f68f1f"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/nextdns/nextdns/releases/download/v1.2.9/nextdns_1.2.9_linux_arm64.tar.gz"
-        sha256 "4834903557e5ee138b1799dc3f29fe6a5d6c16fccd7caeafd8e4839cbe8e8622"
+        url "https://github.com/nextdns/nextdns/releases/download/v1.2.10/nextdns_1.2.10_linux_arm64.tar.gz"
+        sha256 "9f9985f795492a69f36b3fd3e3e2c3f57ed19e4cec6f34a197576f20a2c6ddce"
       else
-        url "https://github.com/nextdns/nextdns/releases/download/v1.2.9/nextdns_1.2.9_linux_armv6.tar.gz"
-        sha256 "e84ce4a0880ed18c4fbbab475c6d948e3c6440fae193ecb1a6c05a4fa9dc2ff2"
+        url "https://github.com/nextdns/nextdns/releases/download/v1.2.10/nextdns_1.2.10_linux_armv6.tar.gz"
+        sha256 "866e0ff61ae009ccea01ac52195181c5649477722229c0aede90174e9610227a"
       end
     end
   end
@@ -32,7 +32,7 @@ class Nextdns < Formula
     To install NextDNS, run the following command:
     sudo nextdns install --config <your_conf_id>
     Then setup your DNS manually to 127.0.0.1 or by running:
-    nextdns activate
+    sudo nextdns activate
   EOS
   end
 end
