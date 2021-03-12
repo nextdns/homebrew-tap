@@ -8,7 +8,7 @@ class Nextdns < Formula
   version "1.11.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
+  if OS.mac?
     url "https://github.com/nextdns/nextdns/releases/download/v1.11.0/nextdns_1.11.0_darwin_amd64.tar.gz"
     sha256 "7bd068f4fa151a7ed37fc21b14b4f5d2e516041939a20be58d01a9d7022ccd57"
   end
