@@ -5,24 +5,28 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.11.0"
+  version "1.12.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.11.0/nextdns_1.11.0_darwin_amd64.tar.gz"
-    sha256 "7bd068f4fa151a7ed37fc21b14b4f5d2e516041939a20be58d01a9d7022ccd57"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.12.0/nextdns_1.12.0_darwin_amd64.tar.gz"
+    sha256 "b2c2fcf3ee40738a5145aa0cf5bc96375234581aeecebd3efed99905b631a780"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/nextdns/nextdns/releases/download/v1.12.0/nextdns_1.12.0_darwin_arm64.tar.gz"
+    sha256 "5864e99f773113d1d82e9629b1441a363e4294f980a7821534f4f7e06a91adb6"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.11.0/nextdns_1.11.0_linux_amd64.tar.gz"
-    sha256 "c6cdfa56ddb0bd4a4f9d8bdf7fff545fd6a5c69fa7109e48474aa8a2d7194e99"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.12.0/nextdns_1.12.0_linux_amd64.tar.gz"
+    sha256 "8ee5d07a3ac369ddc0671f5b9f88894a3d9421927c7e9eff7a3c9d0887698faf"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.11.0/nextdns_1.11.0_linux_armv6.tar.gz"
-    sha256 "7a10f7a7ba60b64ad41ed3f3c82d03dcf04e394a72719782ef2756583a283543"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.12.0/nextdns_1.12.0_linux_armv6.tar.gz"
+    sha256 "a9b8b5a004b55e8c731c5829ecf4dbcf134c7d2e72afd5b5e378f349acbafa94"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/nextdns/nextdns/releases/download/v1.11.0/nextdns_1.11.0_linux_arm64.tar.gz"
-    sha256 "61f1f415be3e95a3874d16597501b882a5e14d8991cfc89e9b3be9df8dfdd35c"
+    url "https://github.com/nextdns/nextdns/releases/download/v1.12.0/nextdns_1.12.0_linux_arm64.tar.gz"
+    sha256 "c3373290f3df50ee56445f8605c5b2d38e27361499d28e451bffac9d77751576"
   end
 
   def install
