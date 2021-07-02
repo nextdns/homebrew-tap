@@ -5,32 +5,32 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.34.1"
+  version "1.34.2"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.34.1/nextdns_1.34.1_darwin_amd64.tar.gz"
-      sha256 "f63ed88d17012cab37162609dce58785adf22fb58dcbf4ae861dae6270bb157b"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.34.2/nextdns_1.34.2_darwin_amd64.tar.gz"
+      sha256 "1da7257a16af80e27a039f7428bc41cfa7a0be5c2d90dd1a3a1385c433a585e7"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.34.1/nextdns_1.34.1_darwin_arm64.tar.gz"
-      sha256 "64962004bd8c25902613c2a818bb3b3121ea0969f97255ede7115be5bd1a7581"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.34.2/nextdns_1.34.2_darwin_arm64.tar.gz"
+      sha256 "a5eef5c626505c6235e74bbce05b520d4a7f5f069fc7b0484b904fcb37954e34"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.34.1/nextdns_1.34.1_linux_amd64.tar.gz"
-      sha256 "db0be46b33f69aacc83fcc8881c0821e4e83c1ea1de4a2cf545039e81dab0626"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.34.2/nextdns_1.34.2_linux_amd64.tar.gz"
+      sha256 "69a83d69f9e780cbd78095957ef49deb19298c612416bb80ffcdfe04ce3ea90d"
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.34.1/nextdns_1.34.1_linux_armv6.tar.gz"
-      sha256 "98681137e50ff2aacac7b939f6c8366c57e1232db8a60a1c5cfc89c82dd2c3ac"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.34.2/nextdns_1.34.2_linux_armv6.tar.gz"
+      sha256 "b596c36713de597d6f77b621abd3c271d6f8993fd6450baa04d316dd4ccd1b3d"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.34.1/nextdns_1.34.1_linux_arm64.tar.gz"
-      sha256 "2775eba5ea8f073f4812e1b521961f61df7f64d6ae42ac0321740a29fac02622"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.34.2/nextdns_1.34.2_linux_arm64.tar.gz"
+      sha256 "be6efb0a3cb89826326db05f98b64f206e01c02b9db675053e46092b555fb7d2"
     end
   end
 
