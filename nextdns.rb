@@ -6,7 +6,6 @@ class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
   version "1.37.7"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
