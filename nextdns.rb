@@ -5,20 +5,20 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.43.2"
+  version "1.43.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.43.2/nextdns_1.43.2_darwin_amd64.tar.gz"
-      sha256 "b760089e2fdd2296d5f6f5abd72dd4d64a1fa3cc1c5a74d7ade7f4a08001fdc2"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.43.3/nextdns_1.43.3_darwin_amd64.tar.gz"
+      sha256 "0f626ddbcf9868411a5d43de048156331bea4cb50df715d0f3005cc640c4f3f1"
 
       def install
         bin.install "nextdns"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.43.2/nextdns_1.43.2_darwin_arm64.tar.gz"
-      sha256 "aec2f3c2694646f1f8d245a63677c113e7c5d7bcf946acd998502ed3fb709440"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.43.3/nextdns_1.43.3_darwin_arm64.tar.gz"
+      sha256 "fe0febda89ae9e5b03b38d8c223341275c4f970b87261e8122e4e64ce5f9ee2e"
 
       def install
         bin.install "nextdns"
@@ -27,25 +27,25 @@ class Nextdns < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.43.2/nextdns_1.43.2_linux_amd64.tar.gz"
-      sha256 "8696b5cc96a4c3cd5bfcf627295843aa1c1ddf9a8ecf5baed261a4d28f36c5a6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nextdns/nextdns/releases/download/v1.43.3/nextdns_1.43.3_linux_arm64.tar.gz"
+      sha256 "d6685ec3f830744de057072364605f334561511968839f4a0f30d9bb07671b14"
 
       def install
         bin.install "nextdns"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.43.2/nextdns_1.43.2_linux_arm64.tar.gz"
-      sha256 "0a25eb451c2d677a9d32b6202a982e03e51b7608b4a65748b9a17974346581bc"
+    if Hardware::CPU.intel?
+      url "https://github.com/nextdns/nextdns/releases/download/v1.43.3/nextdns_1.43.3_linux_amd64.tar.gz"
+      sha256 "aa9d10d3b212a5eeb7c36305faeb8f6d15c5231e9070660129854e5c12d95be6"
 
       def install
         bin.install "nextdns"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.43.2/nextdns_1.43.2_linux_armv6.tar.gz"
-      sha256 "daa4a6ddd5adf87387810f1d6593f08ebe5e2ef2743595be2dbef958f5e6e270"
+      url "https://github.com/nextdns/nextdns/releases/download/v1.43.3/nextdns_1.43.3_linux_armv6.tar.gz"
+      sha256 "edddd51fcc31d5244ec0b6d8b073423a29d0307c4f9336da2655b85f8c39e119"
 
       def install
         bin.install "nextdns"
