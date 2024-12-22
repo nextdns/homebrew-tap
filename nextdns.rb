@@ -5,51 +5,23 @@
 class Nextdns < Formula
   desc "NextDNS DNS/53 to DoH Proxy"
   homepage "https://nextdns.io"
-  version "1.44.1"
+  version "1.44.2"
+  depends_on :macos
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.44.1/nextdns_1.44.1_darwin_arm64.tar.gz"
-      sha256 "5efeebce1603af1cd80995bf06ba71af849d8e4d06d12032168d9adf3eecf51d"
+  if Hardware::CPU.intel?
+    url "https://github.com/nextdns/nextdns/releases/download/v1.44.2/nextdns_1.44.2_darwin_amd64.tar.gz"
+    sha256 "5b12ef04ec4640ec26ee96999f5de322839aa0f7a630d909333ea3f4c64ef1bb"
 
-      def install
-        bin.install "nextdns"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.44.1/nextdns_1.44.1_darwin_amd64.tar.gz"
-      sha256 "fd327d826dbe8dfae6d7df0135d915da7de06af78463694c01f0aa19c305cd3a"
-
-      def install
-        bin.install "nextdns"
-      end
+    def install
+      bin.install "nextdns"
     end
   end
+  if Hardware::CPU.arm?
+    url "https://github.com/nextdns/nextdns/releases/download/v1.44.2/nextdns_1.44.2_darwin_arm64.tar.gz"
+    sha256 "23b49ca16ea80da3def8c1c1608ee7eaf405e4a96c2e0c59a56f98a5469616dc"
 
-  on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.44.1/nextdns_1.44.1_linux_armv6.tar.gz"
-      sha256 "44207d600da6c99f37f18546d04c62a15a8b969e20062196f0a76111a70a9830"
-
-      def install
-        bin.install "nextdns"
-      end
-    end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.44.1/nextdns_1.44.1_linux_arm64.tar.gz"
-      sha256 "1935a1a3ccd4106428a3c598354e874db5083a70c59c12751ccd41aa0d6a7880"
-
-      def install
-        bin.install "nextdns"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/nextdns/nextdns/releases/download/v1.44.1/nextdns_1.44.1_linux_amd64.tar.gz"
-      sha256 "7a2215b2b625aed51b17812552830ed196bf6321940e6f77391506ebe4e139e8"
-
-      def install
-        bin.install "nextdns"
-      end
+    def install
+      bin.install "nextdns"
     end
   end
 
